@@ -45,14 +45,14 @@ func main() {
 	s.AddTool(hotTool, handleGetHotContents)
 
 	// 註冊工具 2: 搜尋內容
-	searchTool := mcp.NewTool("search_content",
+	searchTool := mcp.NewTool("search_contents",
 		mcp.WithDescription("search Vocus contents by title with structured output"),
 		mcp.WithString("title",
 			mcp.Required(),
 			mcp.Description("title keywords to search for"),
 		),
 	)
-	s.AddTool(searchTool, handleSearchContent)
+	s.AddTool(searchTool, handleSearchContents)
 
 	log.Println("Starting StreamableHTTP server on :8080")
 	httpServer := server.NewStreamableHTTPServer(s)
@@ -160,8 +160,8 @@ type SearchContentToolResponse struct {
 	} `json:"tags"`
 }
 
-// handleSearchContent 搜尋內容
-func handleSearchContent(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
+// handleSearchContents 搜尋內容
+func handleSearchContents(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
 	title, err := request.RequireString("title")
 	if err != nil {
 		return mcp.NewToolResultJSON(APIResponse{
