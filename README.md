@@ -138,7 +138,7 @@ Starting StreamableHTTP server on :8080
 
 ### 🍒 Cherry Studio
 
-1. 在 `"MCP"` 的 JSON 設定增加以下配置：
+1. 在 `MCP` 的 JSON 設定增加以下配置：
 
    ```json
    {
@@ -152,7 +152,7 @@ Starting StreamableHTTP server on :8080
    }
    ```
 2. 重新啟動 Cherry Studio。
-   完成後，你即可在 Cherry 的工具清單中找到 **Vocus Content Server**，並直接呼叫：
+   完成後，你即可在 Cherry Studio 的工具清單中找到 **Vocus Content Server**，並直接呼叫：
 
    * `get_hot_contents`
    * `search_contents`
